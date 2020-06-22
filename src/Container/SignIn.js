@@ -9,7 +9,7 @@ import AuthLoader from "../Components/loader/AuthLoader";
 
 const SignIn = () => {
   const [values, setValues] = useState({
-    email: "vardhan4@gmail.com",
+    email: "guest@gmail.com",
     password: "123456",
     error: "",
     loading: false,
@@ -44,7 +44,7 @@ const SignIn = () => {
   //TODO - do a redirect
   const performRedirect = () => {
     if (isAuthenticated()) {
-      return <Redirect to="/me" />;
+      return <Redirect to="/" />;
     }
   };
 
