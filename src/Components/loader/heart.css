@@ -1,0 +1,54 @@
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  transform-origin: 65px 0px;
+}
+.lds-heart span {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #dc3545;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart span:after,
+.lds-heart span:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #dc3545;
+}
+.lds-heart span:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart span:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.75);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  39% {
+    transform: scale(0.65);
+  }
+  45% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
