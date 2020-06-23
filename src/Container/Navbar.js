@@ -8,7 +8,7 @@ const currentTab = (history, path) => {
 };
 const Menu = ({ history }) => {
   const NavLink = ({ title, route, currentTab, history }) => (
-    <span className="col-lg-5 col-sm-4 col-md-4 h5 p-2">
+    <span className="col-lg-12 col-sm-4 col-md-4 h5 p-2">
       <Link style={currentTab(history, route)} to={route}>
         {title}
       </Link>
