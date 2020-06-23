@@ -86,7 +86,7 @@ export default function App() {
   return (
     <div className="container my-5">
       <div className="row justify-content-center">
-        <div className="col-4">
+        <div className="col-lg-4">
           <input
             type="file"
             accept="image/*"
@@ -97,7 +97,7 @@ export default function App() {
       </div>
 
       <div className="row justify-content-center align-items-center">
-        <div className="col-7">
+        <div className="col-lg-7">
           <ReactCrop
             src={upImg}
             onImageLoaded={onLoad}
@@ -106,13 +106,13 @@ export default function App() {
             onComplete={makeClientCrop}
           />
         </div>
-        <div className="col-5">
+        <div className="col-lg-5">
           {previewUrl && <img alt="Crop preview" src={previewUrl} />}
         </div>
       </div>
 
       <div className="row justify-content-center">
-        <div className="col-2">
+        <div className="col-lg-2">
           <button
             onClick={onUpload}
             disabled={previewUrl ? false : true}
@@ -121,7 +121,7 @@ export default function App() {
             {!loading ? "Upload" : "Uploading..."}
           </button>
         </div>
-        <div className="col-2">
+        <div className="col-lg-2">
           <Link to={`/me`} className="btn btn-block btn-danger my-1">
             Cancel
           </Link>
