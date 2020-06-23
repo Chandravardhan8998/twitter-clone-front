@@ -9,7 +9,7 @@ export default function ProfilePic({ className, tweetId, resolution }) {
       src={image}
       alt=""
       style={resolution}
-      className={`mb-3 rounded ${className}`}
+      className={`rounded ${className} tweet-image`}
     />
   );
 }

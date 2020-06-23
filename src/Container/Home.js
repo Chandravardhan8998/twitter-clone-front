@@ -23,9 +23,9 @@ const Home = () => {
   const preload = () => {
     if (isAuthenticated()) {
       getFollowers(user.username).then((res) => {
-        if (res.error) {
+        if (!res || res.error) {
           setLoading(false);
-          setError(res.error);
+          return setError(res ? res.error : "Network Error!");
         }
         setFollowers(res);
       });
@@ -47,12 +47,12 @@ const Home = () => {
   const timeline = () => {
     return (
       <div className="row">
-        <div className="col-2">
+        <div className="col-lg-2">
           <Navbar />
         </div>
-        <div className="col-6 ">
+        <div className="col-lg-6 ">
           <div className="row  border border-top-0 border-bottom-0 border-dark p-0">
-            <div className="col-12">
+            <div className="col-lg-12">
               <h4 className="text-white px-3 py-2">Home</h4>
               <TweetInput />
               {loading ? (
@@ -65,13 +65,13 @@ const Home = () => {
                 <h1 className="text-white">{error}</h1>
               )}
             </div>
-            <div className="col-12"></div>
+            <div className="col-lg-12"></div>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-lg-4">
           <div className="row position-fixed">
-            <div className="col-12 ">{loading ? <Ring /> : <Profile />}</div>
-            <div className="col-12 my-2">
+            <div className="col-lg-12 ">{loading ? <Ring /> : <Profile />}</div>
+            <div className="col-lg-12 my-2">
               <div
                 className="card rounded-lg border-0"
                 style={{ width: "18rem" }}

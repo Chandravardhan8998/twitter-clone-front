@@ -54,7 +54,7 @@ const SignUp = () => {
     <div>
       <Container>
         <div className="row justify-content-center">
-          <div className="col-4">
+          <div className="col-lg-4">
             <form className="my-5">
               {error && Message(error, "Error")}
               <h1 className="text-center text-white my-5">Sign Up</h1>

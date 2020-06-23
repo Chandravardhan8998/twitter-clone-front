@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { API } from "../backend";
 import { isAuthenticated } from "../Helper/authHelper";
 import { createTweet } from "../Helper/tweetHelper";
 import ProfilePic from "./Profile/ProfilePic";
@@ -55,8 +54,8 @@ export default function TweetInput() {
 
   return (
     <div className="row border border-right-0 border-left-0 border-dark py-2">
-      <div className="col-2">
-        <div className="col-2 py-2 ">
+      <div className="col-lg-2 col-sm-2">
+        <div className="col-lg-2 col-sm-2 ">
           <ProfilePic
             username={user.username}
             info="main"
@@ -65,7 +64,7 @@ export default function TweetInput() {
           />
         </div>
       </div>
-      <div className="col-10">
+      <div className="col-lg-10 col-sm-10">
         <form className="my-2">
           <div className="form-row align-items-center ">
             <div className="form-group col-md-12">
@@ -107,7 +106,7 @@ export default function TweetInput() {
               <button
                 onClick={(e) => onSubmit(e, user.username, token, tweet)}
                 type="submit"
-                className="btn btn-primary mx-3 px-3 rounded-pill"
+                className="btn btn-primary px-3 rounded-pill sub-btn"
               >
                 Submit
               </button>

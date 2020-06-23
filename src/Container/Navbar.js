@@ -7,28 +7,50 @@ const currentTab = (history, path) => {
     : { color: "#FFFFFF" };
 };
 const Menu = ({ history }) => {
-  const navLink = (title, route, currentTab, history) => (
-    <div className="col-12 h5 p-2">
+  const NavLink = ({ title, route, currentTab, history }) => (
+    <span className="col-lg-5 col-sm-4 col-md-4 h5 p-2">
       <Link style={currentTab(history, route)} to={route}>
         {title}
       </Link>
-    </div>
+    </span>
   );
   return (
-    <div className="row rounded-lg shadow-lg bg-dark text-white text-center my-3 mx-1">
+    <div className="row justify-content-center align-items-center rounded-lg shadow-lg bg-dark text-white text-center my-3 mx-1">
       {!isAuthenticated() && <Redirect to="signin" />}
-      {navLink("Home", "/", currentTab, history)}
-      {isAuthenticated()
-        ? navLink(`Profile`, `/me`, currentTab, history)
-        : null}
-      {!isAuthenticated()
-        ? navLink(`SignUp`, "/signup", currentTab, history)
-        : null}
+      {
+        <NavLink
+          currentTab={currentTab}
+          history={history}
+          route="/"
+          title="Home"
+        />
+      }
+      {isAuthenticated() && (
+        <NavLink
+          currentTab={currentTab}
+          history={history}
+          route="/me"
+          title="Profile"
+        />
+      )}
+      {!isAuthenticated() && (
+        <NavLink
+          currentTab={currentTab}
+          history={history}
+          route="/signup"
+          title="SignUp"
+        />
+      )}
       {!isAuthenticated() ? (
-        navLink("SignIn", "/signin", currentTab, history)
+        <NavLink
+          currentTab={currentTab}
+          history={history}
+          route="/signin"
+          title="SignIn"
+        />
       ) : (
         <div
-          className="h5 col-12 p-2 text-danger"
+          className="h5 col-lg-12 col-md-4 p-2 text-danger"
           onClick={() => {
             signout(() => {
               history.push("/");

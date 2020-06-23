@@ -77,15 +77,15 @@ export default function Tweet({ tweet }) {
   };
 
   return (
-    <div className="row border-bottom border-secondary py-3 justify-content-center    ">
-      <div className="col-1">
+    <div className="row border-bottom border-secondary py-2 justify-content-center tweet">
+      <div className="col-lg-1 col-md-1  col-sm-1">
         <ProfilePic
           className="rounded-circle"
           username={tweet.userId.username}
           resolution={{ maxWidth: "40px", maxHeight: "40px" }}
         />
       </div>
-      <div className="col-11">
+      <div className="col-lg-11 col-md-11 col-sm-11">
         <div className="row align-item-center px-2">
           <div className="col-12">
             <Link

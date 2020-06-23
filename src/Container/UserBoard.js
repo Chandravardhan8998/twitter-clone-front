@@ -73,10 +73,10 @@ export default function UserBoard({ match }) {
   const userInfo = () => {
     return (
       <div className="row">
-        <div className="col-2">
+        <div className="col-lg-2">
           <Navbar />
         </div>
-        <div className="col-10 ">
+        <div className="col-lg-10 ">
           {loadingP ? (
             <div className="row border border-top-0 border-bottom-0 border-dark bg-dark p-2">
               <Ring />
@@ -88,7 +88,7 @@ export default function UserBoard({ match }) {
           )}
 
           <div className="row  border border-top-0 border-bottom-0 border-dark p-0">
-            <div className="col-8 ">
+            <div className="col-lg-8 ">
               {loadingT ? (
                 <Loading />
               ) : userTweets.length > 0 ? (
@@ -99,7 +99,7 @@ export default function UserBoard({ match }) {
                 <h1 className="text-white">No tweets found!!</h1>
               )}
             </div>
-            <div className="col-4">
+            <div className="col-lg-4">
               <div className="row">
                 <div
                   className="card rounded-lg border-0 my-2"

@@ -66,16 +66,16 @@ export default function UserProfile({ match }) {
   return auth ? (
     <div className="container my-5 py-5">
       <div className="row">
-        <div className="col-12">
+        <div className="col-lg-12">
           <h5 className=" text-white text-center">{error}</h5>
         </div>
-        <div className="col-4"></div>
+        <div className="col-lg-4"></div>
         {loading ? (
           <Ring />
         ) : (
-          <div className="col-4  border border-primary p-4 text-left text-white">
+          <div className="col-lg-4  border border-primary p-4 text-left text-white">
             <div className="row">
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <label>Name : </label>
                 <input
                   type="text"
@@ -84,7 +84,7 @@ export default function UserProfile({ match }) {
                   onChange={handleChange("name")}
                 />
               </div>
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <label>Username : </label>
                 <input
                   type="text"
@@ -93,7 +93,7 @@ export default function UserProfile({ match }) {
                   onChange={handleChange("username")}
                 />
               </div>
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <label className="text-light p-1 py-2">Bio</label>
                 <textarea
                   onChange={handleChange("bio")}
@@ -102,7 +102,7 @@ export default function UserProfile({ match }) {
                   rows="3"
                 ></textarea>
               </div>
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <label>Birth : {moment(userData.birthdate).calendar()}</label>
                 <input
                   type="date"
@@ -110,7 +110,7 @@ export default function UserProfile({ match }) {
                   onChange={handleChange("birthdate")}
                 />
               </div>
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <label>Location </label>
                 <input
                   type="text"
@@ -119,7 +119,7 @@ export default function UserProfile({ match }) {
                   onChange={handleChange("location")}
                 />
               </div>
-              <div className="col-12 py-2">
+              <div className="col-lg-12 py-2">
                 <button
                   onClick={update}
                   className="btn btn-primary btn-block rounded-pill my-2"

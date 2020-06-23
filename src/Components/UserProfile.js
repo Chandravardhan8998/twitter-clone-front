@@ -28,8 +28,8 @@ export default function UserProfile({ userData }) {
   };
 
   return (
-    <div className="row border border-top-0 border-bottom-0 border-dark bg-dark p-2">
-      <div className="col-3">
+    <div className="row border border-top-0 border-bottom-0 border-dark bg-dark p-2 user-profile">
+      <div className="col-lg-3">
         <ProfilePic
           className="p-1 rounded-circle"
           username={userData.username}
@@ -44,9 +44,9 @@ export default function UserProfile({ userData }) {
           </Link>
         ) : null}
       </div>
-      <div className="col-7 p-4">
+      <div className="col-lg-7 p-4">
         <div className="row">
-          <div className="col-12">
+          <div className="col-lg-12">
             {/* //name and username */}
             <span>
               <span className="text-white h3 p-1">{userData.name}</span>
@@ -54,7 +54,7 @@ export default function UserProfile({ userData }) {
             </span>
             {/* //name and username */}
           </div>
-          <div className="col-10">
+          <div className="col-lg-10">
             <p className="text-light p-1 py-2">{userData.bio}</p>
           </div>
           <div className="col-2">
@@ -78,7 +78,7 @@ export default function UserProfile({ userData }) {
               </Link>
             )}
           </div>
-          <div className="col-12">
+          <div className="col-lg-12">
             <p className="text-info px-1 font-weight-bold">
               Birth : {moment(userData.birthdate).calendar()}
             </p>
@@ -87,13 +87,13 @@ export default function UserProfile({ userData }) {
             </p>
           </div>
 
-          <div className="col-12 px-4 py-1">
+          <div className="col-lg-12 px-4 py-1">
             <div className="row">
-              <div className="col-4 text-dark shadow-lg font-weight-bold bg-light py-1 text-center mx-1 rounded-pill  ">
+              <div className="col-lg-4 text-dark shadow-lg font-weight-bold bg-light py-1 text-center mx-1 rounded-pill my-1 ">
                 Following
                 <b> : {userData.following}</b>
               </div>
-              <div className="col-4 text-dark shadow-lg font-weight-bold bg-light p-1 text-center mx-1 rounded-pill  ">
+              <div className="col-lg-4 text-dark shadow-lg font-weight-bold bg-light p-1 text-center mx-1 rounded-pill my-1 ">
                 Followers
                 <b> : {userData.followers}</b>
               </div>
